@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import uuid from "uuid/v4";
+
 export default {
   name: "Add Todo",
   data() {
@@ -16,8 +18,16 @@ export default {
     };
   },
   methods: {
-    addTodo() {
-      //
+    addTodo(e) {
+      e.preventDefault();
+      const newTodo = {
+        id: uuid(),
+        text: this.title,
+        completed: false
+      };
+      //send to parent
+      this.$emit("add-todo", newTodo);
+      this.title = "";
     }
   }
 };
@@ -27,7 +37,9 @@ export default {
 form {
   display: flex;
   flex-direction: column;
-  padding: 2rem 1.5rem;
+  padding-bottom: 2rem;
+  width: 80%;
+  margin: 0 auto;
 }
 input {
   border: 1px solid #333;
