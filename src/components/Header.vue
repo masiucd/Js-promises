@@ -1,22 +1,29 @@
 <template>
-  <header>
-    <h1>Vue JS Todo List</h1>
-    <h3>{{title}}</h3>
+  <header class="header">
+    <h1>TodoList</h1>
+    <div id="nav">
+      <router-link to="/">Home</router-link>|
+      <router-link to="/about">About</router-link>
+    </div>
   </header>
 </template>
 
 <script>
 export default {
-  name: "Header",
-  props: ["title"]
+  name: "Header"
 };
 </script>
 
-<style>
-header {
-  background: rgba(3, 3, 3, 0.4);
-  color: #eee;
+<style scoped>
+.header {
+  background: #333;
+  color: #fff;
   text-align: center;
-  padding: 1.2rem;
+  padding: 10px;
+}
+.header a {
+  color: #fff;
+  padding-right: 5px;
+  text-decoration: none;
 }
 </style>

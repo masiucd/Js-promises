@@ -1,21 +1,19 @@
 <template>
   <div>
-    <div class="todos" v-for="todo in todos" v-bind:key="todo.id">
-      <TodoItem v-bind:todo="todo" v-on:delete-todo="$emit('delete-todo', todo.id)" />
-      <!-- v-on:delete-todo , we are catching our emmit event from the todoItem -->
-      <!-- and we emiting it again to tha parent component -->
+    <div v-bind:key="todo.id" v-for="todo in todos">
+      <TodoItem v-bind:todo="todo" v-on:del-todo="$emit('del-todo', todo.id)" />
     </div>
   </div>
 </template>
 
 <script>
-import TodoItem from "./TodoItem";
+import TodoItem from "./TodoItem.vue";
 export default {
   name: "Todos",
-  props: ["todos"],
   components: {
     TodoItem
-  }
+  },
+  props: ["todos"]
 };
 </script>
 

@@ -1,10 +1,10 @@
 <template>
-  <div class="todo">
-    <div class="todoWrapper">
-      <input type="checkbox" v-on:change="checked" />
-      <h3 v-bind:class="{'completed':todo.completed}">{{todo.text}}</h3>
-      <span class="delete" @click="$emit('delete-todo', todo.id)">❌</span>
-    </div>
+  <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
+    <p>
+      <input type="checkbox" v-on:change="markComplete" v-bind:checked="todo.completed" />
+      {{todo.title}}
+      <button @click="$emit('del-todo', todo.id)" class="del">❌</button>
+    </p>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   name: "TodoItem",
   props: ["todo"],
   methods: {
-    checked() {
+    markComplete() {
       this.todo.completed = !this.todo.completed;
     }
   }
@@ -21,31 +21,20 @@ export default {
 </script>
 
 <style scoped>
-.todo {
-  padding: 1rem 1.5rem;
-  background: #eee;
-  border-bottom: 2px solid #333;
-  margin: 1rem 0;
-  display: flex;
+.todo-item {
+  background: #f4f4f4;
+  padding: 10px;
+  border-bottom: 1px #ccc dotted;
 }
-.todoWrapper {
-  display: flex;
-  align-items: center;
-
-  width: 100%;
-  justify-content: center;
+.is-complete {
+  text-decoration: line-through;
 }
-
-input[type="checkbox"] {
-  margin: 0 1rem;
-}
-
-.completed {
-  text-decoration: line-through 3px #fe3234;
-}
-
-.delete {
-  margin-left: auto;
+.del {
+  color: #fff;
+  border: none;
+  padding: 5px 9px;
+  border-radius: 50%;
   cursor: pointer;
+  float: right;
 }
 </style>
