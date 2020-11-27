@@ -4,41 +4,22 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
+- [Tools](#tools)
 
 ## About <a name = "about"></a>
 
 JS-promises a huge feature of how we can handle asynchronous code in our javascript programs.
 This Repository will take up the fundamentals and to explain to core concepts how they actually work and how you can use them in your code base.
 
-<!-- ## Getting Started <a name = "getting_started"></a>
+## Getting Started <a name = "getting_started"></a>
 
+### start server
 
-### Prerequisites
+to be able to start the server run `npm run json-server`
+now when the server is started, check your terminal and you will se what endpoint you have access to.
+You could also modify the data in `db.json`
 
-`Node >= 10.0`
+## Tools <a name = "tools"></a>
 
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## Usage <a name = "usage"></a>
-
-Add notes about how to use the system. -->
+- Promises
+- Typescript
