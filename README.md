@@ -1,29 +1,44 @@
-# vue_todolist
+# JS Promises
 
-## Project setup
-```
-yarn install
-```
+## Table of Contents
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+- [About](#about)
+- [Getting Started](#getting_started)
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+## About <a name = "about"></a>
 
-### Run your tests
-```
-yarn run test
-```
+JS-promises a huge feature of how we can handle asynchronous code in our javascript programs.
+This Repository will take up the fundamentals and to explain to core concepts how they actually work and how you can use them in your code base.
 
-### Lints and fixes files
+<!-- ## Getting Started <a name = "getting_started"></a>
+
+
+### Prerequisites
+
+`Node >= 10.0`
+
 ```
-yarn run lint
+Give examples
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Installing
+
+A step by step series of examples that tell you how to get a development env running.
+
+Say what the step will be
+
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo.
+
+## Usage <a name = "usage"></a>
+
+Add notes about how to use the system. -->
