@@ -8,6 +8,7 @@
 - [Promise-State](#promise-state)
 - [Catch](#catch)
 - [Finally](#finally)
+- [Promise Constructor](#promise-constructor)
 
 ## About <a name = "about"></a>
 
@@ -86,6 +87,15 @@ console.log(x)
 ## Finally <a name = "finally"></a>
 
 The `Promise.prototype.finally()` m​e​t​h​o​d lets you attach a callback to a promise that is executed once that promise is settled(`fulfilled` ore `rejected`). It used when you want to clean up the logic, for example if u suing a pinner you don't want to still show the spinner if the promise has been rejected, then `.finally()` is a great option to use here.
+
+## Promise Constructor <a name = "promise-constructor"></a>
+
+We can even create our own native promises with the built in Promise constructor, `new Promise()`.
+The `Promise constructor` function takes two parameters, `resolved` adn `rejected`.
+this parameter do exactly what they defined, they either resolve our promise ore reject it.
+When using the build in Promise constructor you will have access to all the asynchronous functions like `async await` and `promise chaining methods`.
+
+_Own promise example_
 
 ## Tools <a name = "tools"></a>
 

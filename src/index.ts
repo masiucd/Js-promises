@@ -1,18 +1,26 @@
 import "./style.css"
-import { getUsers, render } from "./promise-chain/app"
+import { render } from "./03-finally"
 
-const createElement = (tag: string): HTMLElement => {
+const createElement = (tag: string, className: string): HTMLElement => {
   const element = document.createElement(tag)
+  element.classList.add(className)
   return element
 }
 
 function component() {
   const URL = "https://jsonplaceholder.typicode.com"
 
-  const element = createElement("div") as HTMLDivElement
+  const spinner = createElement("div", "spinner") as HTMLDivElement
+  const spinnerBody = createElement("div", "spinner-body") as HTMLDivElement
+  const element = createElement("div", "main") as HTMLDivElement
+  const wrapper = createElement("div", "wrapper") as HTMLDivElement
 
-  element.innerHTML = ` <h1>...Loading</h1> `
-  render(element, URL)
+  wrapper.innerHTML = ` <h1>...Loading</h1> `
+  render(wrapper, URL)
+
+  spinner.appendChild(spinnerBody)
+
+  element.append(spinner, wrapper)
 
   return element
 }
