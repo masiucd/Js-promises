@@ -159,6 +159,24 @@ run(700)
 `Promise.race()` will return the fulfilled promise that will be fulfilled first, so simply the fastest will win.
 `Promise.race()` takes a array og f promises as a parameter, if you give at a empty array the state will be a pending promise.
 
+```typescript
+function runAfter<T>(ms: number, val: T) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(val)
+    }, ms)
+  })
+}
+
+const rabbit = runAfter(2000, "🐇")
+const turtle = runAfter(6000, "🐢")
+
+const winnerIs = Promise.race([rabbit, turtle])
+winnerIs.then(res => {
+  console.log(res)
+})
+```
+
 ## Tools <a name = "tools"></a>
 
 - Promises
