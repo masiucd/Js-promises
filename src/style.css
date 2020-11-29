@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("./montserrat/Montserrat-Medium.otf") format("woff2"),
+    url("./montserrat/Montserrat-Medium.otf") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.hello {
+  background: burlywood;
+}
