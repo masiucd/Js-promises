@@ -7,6 +7,7 @@
 - [Tools](#tools)
 - [Promise-State](#promise-state)
 - [Catch](#catch)
+- [Finally](#finally)
 
 ## About <a name = "about"></a>
 
@@ -81,6 +82,10 @@ console.log(x)
 ```
 
 <img src="error.png" />
+
+## Finally <a name = "finally"></a>
+
+The `Promise.prototype.finally()` m​e​t​h​o​d lets you attach a callback to a promise that is executed once that promise is settled(`fulfilled` ore `rejected`). It used when you want to clean up the logic, for example if u suing a pinner you don't want to still show the spinner if the promise has been rejected, then `.finally()` is a great option to use here.
 
 ## Tools <a name = "tools"></a>
 
