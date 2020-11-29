@@ -6,6 +6,7 @@
 - [Getting Started](#getting_started)
 - [Tools](#tools)
 - [Promise-State](#promise-state)
+- [Catch](#catch)
 
 ## About <a name = "about"></a>
 
@@ -58,6 +59,28 @@ const x = fetch("https://jsonplaceholder.typicode.com/users")
 ```
 
 We return the data in to next `promise chain` where we can console.log out the result and length of the users list
+
+## Catch Errors <a name = "catch"></a>
+
+What would happened if something wrong would happened on the way from out request? We would like to catch somehow our errors to handle the on some kind of way.
+When using promise chaining we can add another chain at the end names `.catch()` that will catch our errors if the promise has been rejected.
+Remember the we can nly bee in on state, either `fulfilled` ore `rejected`.
+So using the same example above we could add the `.catch()` at the end and catch any errors, if so.
+
+For example let's change the url
+
+```js
+const x = fetch("https://json-----placeholder.typicode.com/users")
+  .then(response => response.json())
+  .then(users => {
+    console.log(users)
+    console.log(users.length)
+  })
+  .catch(err => console.error("ohh nooo!!!", err))
+console.log(x)
+```
+
+<img src="error.png" />
 
 ## Tools <a name = "tools"></a>
 
