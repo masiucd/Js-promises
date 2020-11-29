@@ -1,20 +1,18 @@
 import "./style.css"
+import { getUsers, render } from "./promise-chain/app"
+
+const createElement = (tag: string): HTMLElement => {
+  const element = document.createElement(tag)
+  return element
+}
 
 function component() {
-  const element = document.createElement("div")
+  const URL = "https://jsonplaceholder.typicode.com"
 
-  element.innerHTML = ` <h1>hello</h1> `
-  element.classList.add("hello")
+  const element = createElement("div") as HTMLDivElement
 
-  const x = fetch("https://jsonplaceholder.typicode.com/users")
-    .then(response => response.json())
-    .then(users => {
-      console.log(users)
-      console.log(users.length)
-    })
-
-  console.log(x)
-  console.log("x", x)
+  element.innerHTML = ` <h1>...Loading</h1> `
+  render(element, URL)
 
   return element
 }

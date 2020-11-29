@@ -1,4 +1,16 @@
 import axios from "axios"
-const URL = "https://jsonplaceholder.typicode.com"
 
-axios.get(URL + "/todos").then(d => console.log(d.data))
+const getUsers = (URL: string, endPoint: string) => {
+  const response = axios.get(URL + endPoint).then(res => res.data) as Promise<
+    Array<any>
+  >
+  return response
+}
+
+const render = async (element: HTMLDivElement, URL: string) => {
+  const users = await getUsers(URL, "/users")
+  const output = users.map(user => ` <p>${user.name}</p>`).join("")
+  element.innerHTML = output
+}
+
+export { getUsers, render }
