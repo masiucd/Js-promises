@@ -11,6 +11,7 @@
 - [Promise Constructor](#promise-constructor)
 - [Race](#race)
 - [All](#all)
+- [AllSettled](#all-settled)
 
 ## About <a name = "about"></a>
 
@@ -179,6 +180,11 @@ winnerIs.then(res => {
 ## Promise All <a name = "all"></a>
 
 promise.all takes multiple promises as a parameter and it returns a single promise that is fulfilled, when all of the input promises have been fulfilled. You can simply kick of multiple API request at the same time and wait until all of them is fulfilled
+
+## All Settled <a name = "all-settled"></a>
+
+If you using Promise.all and some of your API request will not be fulfilled, the whole request will be rejected. Thats why Ecma-script-2020 implemented the new `Promise.allSettled`
+that will fulfill the promise that at leas has a `2**` response.
 
 ## Tools <a name = "tools"></a>
 
