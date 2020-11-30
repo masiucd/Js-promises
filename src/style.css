@@ -57,3 +57,10 @@ body {
   align-self: center;
   border-radius: 50%;
 }
+
+.promise-all {
+  font-size: 20px;
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: center;
+}

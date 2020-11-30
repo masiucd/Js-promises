@@ -10,6 +10,7 @@
 - [Finally](#finally)
 - [Promise Constructor](#promise-constructor)
 - [Race](#race)
+- [All](#all)
 
 ## About <a name = "about"></a>
 
@@ -35,9 +36,7 @@ there is 3 possible states that or promise can be in
 Before our result is ready the promise is the pending state.
 
 ```js
-const x = fetch("https://jsonplaceholder.typicode.com/users").then(
-  response => response
-)
+const x = fetch("https://jsonplaceholder.typicode.com/users").then(response => response)
 ```
 
 when the promise is available then the promise change it state to `fulfilled`.
@@ -156,7 +155,7 @@ run(700)
 
 ## Race <a name = "race"></a>
 
-`Promise.race()` will return the fulfilled promise that will be fulfilled first, so simply the fastest will win.
+`Promise.race()` will return the fulfilled promise, of the first promise that gets passed in to the array, so simply the fastest will win.
 `Promise.race()` takes a array og f promises as a parameter, if you give at a empty array the state will be a pending promise.
 
 ```typescript
@@ -176,6 +175,10 @@ winnerIs.then(res => {
   console.log(res)
 })
 ```
+
+## Promise All <a name = "all"></a>
+
+promise.all takes multiple promises as a parameter and it returns a single promise that is fulfilled, when all of the input promises have been fulfilled. You can simply kick of multiple API request at the same time and wait until all of them is fulfilled
 
 ## Tools <a name = "tools"></a>
 
