@@ -1,5 +1,3 @@
-const decoder = new TextDecoder()
-
 interface SureThingResponse<T> {
   ok: boolean
   data?: T
